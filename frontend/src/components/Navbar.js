@@ -18,7 +18,7 @@ const Navbar = () => {
     const onLogout = async (e) => {
         await axios.get('http://localhost:8000/api/logout').then(response => {
             if (response.status === 201) {
-                setTimeout(() => window.location.reload(), 3000);
+                setUserid('');
                 logoutUser();
                 localStorage.removeItem('token');
                 localStorage.removeItem('user');
